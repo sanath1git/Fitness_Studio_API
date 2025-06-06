@@ -1,0 +1,111 @@
+{
+  "info": {
+    "name": "Fitness Studio Booking API",
+    "description": "Complete API collection for testing the Fitness Studio Booking system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Get All Classes (IST)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/classes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["classes"]
+        }
+      }
+    },
+    {
+      "name": "Get All Classes (UTC)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/classes?timezone=UTC",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["classes"],
+          "query": [
+            {
+              "key": "timezone",
+              "value": "UTC"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Classes (US Eastern)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/classes?timezone=US/Eastern",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["classes"],
+          "query": [
+            {
+              "key": "timezone",
+              "value": "US/Eastern"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Book Class - Success",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"class_id\": 1,\n  \"client_name\": \"John Doe\",\n  \"client_email\": \"john.doe@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/book",
+          "protocol": "
